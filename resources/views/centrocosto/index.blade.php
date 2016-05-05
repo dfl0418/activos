@@ -4,13 +4,13 @@
 
 	<div class="row">
 		<div class="col-sm-2">
-			<h4><strong><A>Categoria</A></strong></h4>
+			<h4><strong><A>Centro De Costos</A></strong></h4>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-3 pull-right">
-			{!! Html::link(route('categoria.create'), 'Add', array('class' => 'btn btn-info btn-md pull-right')) !!}
+			{!! Html::link(route('centrocosto.create'), 'Add', array('class' => 'btn btn-info btn-md pull-right')) !!}
 		</div>
 	</div>
 
@@ -19,7 +19,7 @@
 	@endif
 
 
-	@if(!$categoria->isEmpty())
+	@if(!$centrocosto->isEmpty())
 		<table class="table table-striped">
 
 			<thead>
@@ -30,16 +30,16 @@
 			</tr>
 			</thead>
 			<tbody>
-			@foreach ($categoria as $categorias)
+			@foreach ($centrocosto as $centro_costos)
 				<tr>
 
-					<td>{{ $categorias->nombre_categoria}}</td>
+					<td>{{ $centro_costos->nombre_centro_costo}}</td>
 
 					<td>
-						{!! Html::link(route('categoria.edit', $categorias->id), 'Actualizar', array('class' => 'btn btn-success btn-sm')) !!}
+						{!! Html::link(route('centrocosto.edit', $centro_costos->id), 'Actualizar', array('class' => 'btn btn-success btn-sm')) !!}
 					</td>
 					<td>
-						{!! Form::open(array('route' => array('categoria.destroy', $categorias->id), 'method' => 'DELETE')) !!}
+						{!! Form::open(array('route' => array('centrocosto.destroy', $centro_costos->id), 'method' => 'DELETE')) !!}
 						<button type="submit" class="btn btn-danger btn-sm">Delete</button>
 						{!! Form::close() !!}
 					</td>

@@ -23,16 +23,16 @@
 
 
 					<div class="panel-body">
-						@if(isset($categorias))
-							{!! Form::model($categorias, ['route' => ['categoria.update', $categorias->id_categoria], 'method' => 'patch', 'class' => 'form-horizontal']) !!}
+						@if(isset($centro_costos))
+							{!! Form::model($centro_costos, ['route' => ['centrocosto.update', $centro_costos->id_categoria], 'method' => 'patch', 'class' => 'form-horizontal']) !!}
 						@else
-							{!! Form::open(['route' => 'categoria.store',  'class' => 'form-horizontal', 'method' => 'post']) !!}
+							{!! Form::open(['route' => 'centrocosto.store',  'class' => 'form-horizontal', 'method' => 'post']) !!}
 						@endif
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Categoria</label>
+							<label for="inputEmail3" class="col-sm-2 control-label">Centro De Costos</label>
 							<div class="col-sm-10">
-								{!! Form::text('nombre_categoria', @$categorias->nombre_categoria, ["class" => "form-control"]) !!}
+								{!! Form::text('nombre_centro_costo', @$centro_costos->nombre_centro_costo, ["class" => "form-control"]) !!}
 							</div>
 						</div>
 
