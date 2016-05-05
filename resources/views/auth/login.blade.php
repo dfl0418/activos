@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('default2')
 
 @section('content')
 <div class="container">
@@ -63,4 +63,13 @@
         </div>
     </div>
 </div>
+
+@section('derechos')
+    <footer>
+
+        <p class="pull-right"><a href="#">VOLVER ARRIBA</a></p>
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
+    </footer>
+    <!-- /.container -->
+@endsection
 @endsection

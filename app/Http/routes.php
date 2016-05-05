@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'WelcomeController@index');
+Route::get('about', 'WelcomeController@about');
+Route::resource('activo', 'ActivoController');
+Route::resource('categoria', 'CategoriaController');
+Route::resource('centrocosto', 'CentroCostoController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+

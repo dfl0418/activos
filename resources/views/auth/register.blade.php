@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('default2')
 
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Name</label>
+                            <label class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -23,9 +23,22 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Apellido</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Documento</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="documento" value="{{ old('documento') }}">
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label class="col-md-4 control-label">Correo</label>
 
                             <div class="col-md-6">
                                 <input type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -37,6 +50,44 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Fecha Nacimiento</label>
+                            <div class="col-md-6">
+                                <input type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Direccion</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="address" value="{{ old('address') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Teléfono</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="phone" value="{{ old('phone') }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Grupo Sanguineo</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="grupo_sanguineo" >
+                                    <option value='o+' >o+</option>
+                                    <option value='o-' >o-</option>
+                                    <option value='a+' >a+</option>
+                                    <option value='a-' >a-</option>
+                                    <option value='b+' >b+</option>
+                                    <option value='b-' >b-</option>
+                                    <option value='ab+' >ab+</option>
+                                    <option value='ab-' >ab-</option>
+                                </select>
+                            </div>
+                        </div>
+
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Password</label>
@@ -79,4 +130,18 @@
         </div>
     </div>
 </div>
+
+@section('derechos')
+
+
+    <footer>
+
+        <p class="pull-right"><a href="#">VOLVER ARRIBA</a></p>
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
+    </footer>
+
+    <!-- /.container -->
+
+
+@endsection
 @endsection
