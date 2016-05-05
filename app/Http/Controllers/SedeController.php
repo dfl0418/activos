@@ -2,14 +2,14 @@
 
 use Almacen\Http\Requests;
 use Almacen\Http\Controllers\Controller;
-use Almacen\Http\Requests\CategoriaForm;
+use Almacen\Http\Requests\SedeForm;
 
 use Illuminate\Http\Request;
-use Almacen\Categoria;
+use Almacen\Sede;
 
 
 
-class CategoriaController extends Controller {
+class SedeController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -25,8 +25,8 @@ class CategoriaController extends Controller {
 
     public function index()
     {
-        $categorias =Categoria::paginate(5);
-        return view("categoria.index")->with('categoria', $categorias);
+        $sedes =Sede::paginate(5);
+        return view("sede.index")->with('sede', $sedes);
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoriaController extends Controller {
      */
     public function create()
     {
-        return view("categoria.create");
+        return view("sede.create");
     }
 
     /**
@@ -46,13 +46,13 @@ class CategoriaController extends Controller {
      */
     public function store()
     {
-        $categorias = new Categoria();
+        $sedes = new Sede();
 
 
-        $categorias->nombre_categoria = \Request::input('nombre_categoria');
+        $sedes->municipio = \Request::input('municipio');
 
-        $categorias->save();
-        return redirect('categoria/create')->with('message', 'categoria Creado');
+        $sedes->save();
+        return redirect('sede/create')->with('message', 'sede Creado');
     }
 
     /**
@@ -74,8 +74,8 @@ class CategoriaController extends Controller {
      */
     public function edit($id)
     {
-        $categorias  = Categoria::find($id);
-        return view("categoria.create")->with('categoria',$categorias);
+        $sedes  = Sede::find($id);
+        return view("sede.create")->with('sede',$sedes);
 
     }
 
@@ -87,11 +87,11 @@ class CategoriaController extends Controller {
      */
     public function update($id)
     {
-        $categorias = Categoria::find($id);
-        $categorias->nombre_categoria = \Request::input('nombre_categoria');
+        $sedes = Sede::find($id);
+        $sedes->nombre_sede = \Request::input('nombre_sede');
 
-        $categorias->save();
-        return redirect()->route('categoria.index')->with('message', "Los datos de {$categorias->nombre} han sido actulizado");
+        $sedes->save();
+        return redirect()->route('sede.index')->with('message', "Los datos de {$sedes->nombre} han sido actulizado");
     }
 
     /**
@@ -102,10 +102,10 @@ class CategoriaController extends Controller {
      */
     public function destroy($id)
     {
-        $categorias = Categoria::find($id);
-        $categorias->delete();
+        $sedes = Sede::find($id);
+        $sedes->delete();
 
-        return redirect()->route('categoria.index')->with('message', "facultad {$categorias->nombre} ha sido eliminado" );
+        return redirect()->route('sede.index')->with('message', "facultad {$sedes->nombre} ha sido eliminado" );
     }
 
 }

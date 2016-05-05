@@ -20,6 +20,7 @@ Route::get('about', 'WelcomeController@about');
 Route::resource('activo', 'ActivoController');
 Route::resource('categoria', 'CategoriaController');
 Route::resource('centrocosto', 'CentroCostoController');
+Route::resource('sede', 'SedeController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

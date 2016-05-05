@@ -75,7 +75,7 @@ class CentroCostoController extends Controller {
     public function edit($id)
     {
         $centro_costos  = CentroCosto::find($id);
-        return view("centrocosto.create")->with('facultad',$centro_costos);
+        return view("centrocosto.create")->with('centrocosto',$centro_costos);
 
     }
 

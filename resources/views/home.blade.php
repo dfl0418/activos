@@ -105,8 +105,8 @@
                         <li><a href="{{ url('categoria') }}">Categorias</a></li>
                         <li><a href="{{ url('activo') }}">Activos</a></li>
                         <li><a href="{{ url('centrocosto') }}">Centro De Costos</a></li>
-                        <li><a href="{{ url('sedes') }}">Sedes</a></li>
-                        <li><a href="{{ url('oficinas') }}">Oficinas</a></li>
+                        <li><a href="{{ url('sede') }}">Sedes</a></li>
+                        <li><a href="{{ url('oficina') }}">Oficinas</a></li>
                         <li><a href="{{ url('ubicacion') }}">Ubicaciones</a></li>
                         <li><a href="{{ url('cargo') }}">Cargos</a></li>
                         <li><a href="{{ url('perfil') }}">Perfiles</a></li>
