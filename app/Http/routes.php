@@ -17,13 +17,12 @@ Route::get('/', function () {
 
 Route::get('/', 'WelcomeController@index');
 Route::get('about', 'WelcomeController@about');
+Route::auth();
+Route::get('/home', 'HomeController@index');
 Route::resource('activo', 'ActivoController');
 Route::resource('categoria', 'CategoriaController');
 Route::resource('centrocosto', 'CentroCostoController');
 Route::resource('sede', 'SedeController');
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
