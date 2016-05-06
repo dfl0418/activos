@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=7,8,9" />
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--   <link rel="icon" href="img/logo.ico">  -->
+
+    <title>SCSAF</title>
+    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/bootstrap-theme.min') }}" rel="stylesheet">
+    <!-- Fonts -->
 
 
-    <title>@yield('titulo')</title>
+    <!-- Styles -->
 
+    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <style>
+        body {
+            font-family: 'Lato';
+        }
 
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Estilo css para posicionarlo -->
-    <style type="text/css">
-        #bg{
-            position:fixed;
-            top:0;
-            left:0;
-            z-index:-1;
+        .fa-btn {
+            margin-right: 6px;
         }
     </style>
 
@@ -46,13 +31,35 @@
             margin-bottom:  0;
             border-radius: 0;
             background-color: #e0001b;
+            border-color:#212282;
             height: 100%;
+            color: #FFFFFF;
 
 
 
         }
+        .navbar-inverse .navbar-brand {
+            color: #FFFFFF;
+        }
+        .navbar-inverse .navbar-nav>li>a{
+            color:#FFFFFF;
+            background-color: #e0001b;
+            border-color:#212282;
+        }
+
+        .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+
+            color:#FFFFFF;
+            background-color: #e0001b;
+            border-color:#212282;
+        }
+        a{
+            color: #FFFFFF;
+        }
+
         .navbar-inverse .navbar-nav>li>a{
             color:#FFFFFF;}
+
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {height: 450px}
@@ -76,124 +83,59 @@
             .row.content {height:auto;}
         }
     </style>
-
-
-    <!--A?adimos codigo JAvaScript para redimensionar la imagen-->
-    <script type="text/javascript">
-        window.onload = function() {
-            function bgadj(){
-                var element = document.getElementById("bg");
-                var ratio =  element.width / element.height;
-                if ((window.innerWidth / window.innerHeight) < ratio){
-                    element.style.width = 'auto';
-                    element.style.height = '100%';
-                    <!-- si la imagen es mas ancha que la ventana la centro -->
-                    if (element.width > window.innerWidth){
-                        var ajuste = (window.innerWidth - element.width)/2;
-                        element.style.left = ajuste+'px';
-                    }
-                }
-                else{
-                    element.style.width = '100%';
-                    element.style.height = 'auto';
-                    element.style.left = '0';
-                }
-            }
-            <!-- llamo a la funci?n bgadj() por primera vez al terminar de cargar la p?gina -->
-            bgadj();
-            <!-- vuelvo a llamar a la funci?n  bgadj() al redimensionar la ventana -->
-            window.onresize = function() {
-                bgadj();
-            }
-        }
-    </script>
-
-
-
-
-
-
-
 </head>
-
-<body>
-
-
-
-<div class="navbar-wrapper">
-
-
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+<body id="app-layout">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
         <div class="container">
             <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand"><font size=5>SCSAF</font></a>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    SCSAF
+                </a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}"><font size=4>Incio</font></a></li>
-                    <li><a href="{{ url('about') }}"><font size=4>Acerca de</font></a></li>
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
+                    <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
+
+                <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('auth/login') }}">Login</a></li>
+                        <li><a href="{{ url('auth/register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
                     @endif
                 </ul>
             </div>
         </div>
     </nav>
 
-
-</div>
-
-
-<!--<img id="bg" src="img/fondo.png"  alt="background" />  -->
-
-
-
-
-
-<div class="container">
     @yield('content')
-            <!-- Main component for a primary marketing message or call to action -->
 
-
-</div> <!-- /container -->
-<hr class="featurette-divider">
-<!-- FOOTER -->
-@yield('derechos')
-
-
-
-
-
-
-        <!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-
-
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

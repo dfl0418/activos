@@ -98,9 +98,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <ul class="nav navbar-nav">
+
+
                         @yield('navegacion')
                         <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Carga de Datos<span class="caret"></span></a>
+
                         <ul class="dropdown-menu">
                         <li><a href="{{ url('categoria') }}">Categorias</a></li>
                         <li><a href="{{ url('activo') }}">Activos</a></li>
@@ -111,15 +115,18 @@
                         <li><a href="{{ url('cargo') }}">Cargos</a></li>
                         <li><a href="{{ url('perfil') }}">Perfiles</a></li>
                         <li><a href="{{ url('funcionario') }}">Funcionarios</a></li>
-
-
                         <li><a href="{{ url('programa') }}">Programas</a></li>
+
+                            </ul>
                     </ul>
-                    </ul>
+
+
                     </li>
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ url('auth/register') }}"><font size=4>Registrarse</font></a></li>
+
                         <li class="dropdown">
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenid@ {{ @Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
 
