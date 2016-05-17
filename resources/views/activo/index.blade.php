@@ -26,8 +26,10 @@
             <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
+                <th>Observaciones</th>
                 <th>Numero Inventario</th>
                 <th>Fecha Compra</th>
+                <th>Valor Activo</th>
                 <th>Categoria</th>
 
                 <th width="60" align="center"></th>
@@ -40,8 +42,10 @@
 
                     <td>{{ $activos->nombre_activo}}</td>
                     <td>{{ $activos->descripcion}}</td>
+                    <td>{{ $activos->observacion}}</td>
                     <td>{{ $activos->numero_inventario}}</td>
                     <td>{{ $activos->fecha_compra}}</td>
+                    <td>{{ $activos->valor_activo}}</td>
                     <td>{{ $activos->categorias->nombre_categoria }}</td>
                     <td>
                         {!! Html::link(route('activo.edit', $activos->id), 'Actualizar', array('class' => 'btn btn-success btn-sm')) !!}

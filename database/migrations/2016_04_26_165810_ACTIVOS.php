@@ -16,8 +16,10 @@ class ACTIVOS extends Migration
             $table->increments('id_activo',10);
             $table->string('nombre_activo', 45);
             $table->string('descripcion',45);
+            $table->string('observacion',45);
             $table->integer('numero_inventario');
             $table->date('fecha_compra');
+            $table->integer('valor_activo');
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('id_categoria')->on('categorias');
             $table->timestamps();

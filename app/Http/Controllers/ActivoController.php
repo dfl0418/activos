@@ -53,8 +53,10 @@ class ActivoController extends Controller {
         $activos = new Activo();
         $activos->nombre_activo = \Request::input('nombre_activo');
         $activos->descripcion = \Request::input('descripcion');
+        $activos->observacion = \Request::input('observacion');
         $activos->numero_inventario = \Request::input('numero_inventario');
         $activos->fecha_compra = \Request::input('fecha_compra');
+        $activos->valor_activo = \Request::input('valor_activo');
         $activos->categoria_id = \Request::input('categoria');
         $activos->save();
         return redirect('activo/create')->with('message', 'El activo fue  Creado');

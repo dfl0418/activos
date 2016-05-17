@@ -9,7 +9,7 @@ class Activo extends Model
 {
     //
     protected $guarded = ['id_activo'];
-    protected $fillable = ['nombre_activo','descripcion', 'numero_inventario','fecha_compra'];
+    protected $fillable = ['nombre_activo','descripcion','observacion', 'numero_inventario','fecha_compra','valor_activo'];
     
     public function categorias()
     {

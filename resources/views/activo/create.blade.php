@@ -49,6 +49,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Observaciones</label>
+                                <div class="col-sm-10">
+                                    {!! Form::text('observacion', @$activos->observacion, ["class" => "form-control"]) !!}
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Numero De Inventario </label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name="numero_inventario" value="{{ old('numero_inventario') }}">
@@ -61,8 +67,15 @@
                                     <input type="date" class="form-control" name="fecha_compra" value="{{ old('fecha_compra') }}">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Valor Activo </label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="valor_activo" value="{{ old('valor_activo') }}">
+                                </div>
+                            </div>
 
-                        <div class="form-group">
+
+                            <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Categoria</label>
                             <div class="col-sm-10">
                                 {!! Form::select('categoria', @$categoria,null, ["class" => "form-control"]) !!}
