@@ -52,14 +52,15 @@
 @section('derechos')
 
 
-        <footer>
+    <footer class="footer">
 
             <p class="pull-right"><a href="#">VOLVER ARRIBA</a></p>
             <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
         </footer>
 
    <!-- /.container -->
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 @endsection
 

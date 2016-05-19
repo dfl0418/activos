@@ -13,12 +13,12 @@ class Ubicacion extends Model
 
   
 
-    public function acticvos()
+    public function activos()
     {
-        return $this->belongsTo('eps\Ativo', 'activo_id', 'id_activo'); // 1:N
+        return $this->belongsTo('Almacen\Activo', 'activo_id', 'id_activo'); // 1:N
     }
     public function oficinas()
     {
-        return $this->belongsTo('eps\Oficina', 'oficina_id', 'id_oficina'); // 1:N
+        return $this->belongsTo('Almacen\Oficina', 'oficina_id', 'id_oficina'); // 1:N
     }
 }

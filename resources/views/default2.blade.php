@@ -19,7 +19,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link href="{{ asset('/css/default.css') }}" rel="stylesheet">
 
 
 
@@ -187,6 +187,7 @@
 </div> <!-- /container -->
 <hr class="featurette-divider">
 <!-- FOOTER -->
+<div class="separator"></div>
     @yield('derechos')
 
 

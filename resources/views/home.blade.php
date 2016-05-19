@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -11,10 +12,18 @@
     <meta content="" name="author">
 
 
-    <title>Login De SCAF</title>
+    <title>Login De SISCAF</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/default.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="js/autocomplete.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    <script type="text/javascript" src="js/addanother.js"></script>
+    <script type="text/javascript" src="js/text_widget.js"></script>
+    <script type="text/javascript" src="js/remote.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/style.css">
 
 
 
@@ -62,9 +71,16 @@
 
         /* Set black background color, white text and some padding */
         footer {
-            background-color: #212282;
-            color: white;
-            padding: 15px;
+
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 60px;
+            background-color: #303192;
+            color: #fff;
+
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -146,12 +162,29 @@
 
 
 <div class="container">
+
     @yield('content')
             <!-- Main component for a primary marketing message or call to action -->
-
-
 </div> <!-- /container -->
 
+
+
+<!-- Footer del proyecto -->
+<div class="separator"></div>
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"> -->
+
+<footer class="footer">
+
+    <p>
+    <p class="pull-right"><a href="#">VOLVER ARRIBA</a></p>
+    <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
+    </p>
+    <!-- Bootstrap core JavaScript<a href="./">Fixed top</a>
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jstooltip.js"></script>
+</footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

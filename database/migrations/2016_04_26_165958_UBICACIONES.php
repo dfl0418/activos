@@ -22,6 +22,7 @@ class UBICACIONES extends Migration
             $table->foreign('activo_id')->references('id_activo')->on('activos');
             $table->integer('oficina_id')->unsigned();
             $table->foreign('oficina_id')->references('id_oficina')->on('oficinas');
+            $table->boolean('confirmed');
             $table->timestamps();
 
         });

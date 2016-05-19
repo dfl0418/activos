@@ -14,10 +14,10 @@ class Oficina extends Model
    
     public function sedes()
     {
-        return $this->belongsTo('eps\Sede', 'sede_id', 'id_sede'); // 1:N
+        return $this->belongsTo('Almacen\Sede', 'sede_id', 'id_sede'); // 1:N
     }
     public function centro_costos()
     {
-        return $this->belongsTo('eps\CentroCosto', 'centro_costo_id', 'id_centro_costo'); // 1:N
+        return $this->belongsTo('Almacen\CentroCosto', 'centro_costo_id', 'id_centro_costo'); // 1:N
     }
 }

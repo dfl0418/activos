@@ -13,10 +13,10 @@ class Funcionario extends Model
 
     public function cargos()
     {
-        return $this->belongsTo('eps\Cargo', 'cargo_id', 'id_cargo'); // 1:N
+        return $this->belongsTo('Almacen\Cargo', 'cargo_id', 'id_cargo'); // 1:N
     }
     public function perfiles()
     {
-        return $this->belongsTo('eps\Perfil', 'perfil_id', 'id_perfil'); // 1:N
+        return $this->belongsTo('Almacen\Perfil', 'perfil_id', 'id_perfil'); // 1:N
     }
 }

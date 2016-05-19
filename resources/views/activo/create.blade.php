@@ -92,10 +92,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 pull-right">
-                {!! Html::link(route('activo.create'), 'Add', array('class' => 'btn btn-info btn-md pull-right')) !!}
-            </div>
-        </div>
+
     </div>
 @endsection
