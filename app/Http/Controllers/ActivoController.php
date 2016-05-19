@@ -94,11 +94,11 @@ class ActivoController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id_activo)
     {
-        $activos = Activo::find($id);
-        $activos->nombre_activo = \Request::input('nombre');
-        $activos->id_categoria = \Request::input('categoria');
+        $activos = Activo::find($id_activo);
+        $activos->nombre_activo = \Request::input('nombre_activo');
+        $activos->id_categoria = \Request::input('id_categoria');
         $activos->save();
         return redirect()->route('activo.index')->with('message', "Los datos de {$activos->nombre_activo} han sido actulizado");
     }
