@@ -131,7 +131,6 @@
                         <li><a href="{{ url('cargo') }}">Cargos</a></li>
                         <li><a href="{{ url('perfil') }}">Perfiles</a></li>
                         <li><a href="{{ url('funcionario') }}">Funcionarios</a></li>
-                        <li><a href="{{ url('programa') }}">Programas</a></li>
 
                             </ul>
                     </ul>
@@ -176,7 +175,6 @@
 <footer class="footer">
 
     <p>
-    <p class="pull-right"><a href="#">VOLVER ARRIBA</a></p>
     <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
     </p>
     <!-- Bootstrap core JavaScript<a href="./">Fixed top</a>

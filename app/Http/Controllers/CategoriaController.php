@@ -52,7 +52,7 @@ class CategoriaController extends Controller {
         $categorias->nombre_categoria = \Request::input('nombre_categoria');
 
         $categorias->save();
-        return redirect('categoria/create')->with('message', 'categoria Creado');
+        return redirect('categoria/index')->with('message', 'categoria Creado');
     }
 
     /**
@@ -105,7 +105,7 @@ class CategoriaController extends Controller {
         $categorias = Categoria::find($id);
         $categorias->delete();
 
-        return redirect()->route('categoria.index')->with('message', "facultad {$categorias->nombre} ha sido eliminado" );
+        return redirect()->route('categoria.index')->with('message', "categoria {$categorias->nombre_categoria} ha sido eliminado" );
     }
 
 }

@@ -154,6 +154,22 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
+                            <li class="dropdown" id="menuLogin">
+                                <a class="dropdown-toggle" href="/#" data-toggle="dropdown" id="navLogin"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+                                <div class="dropdown-menu displayer">
+
+                                    <form class="form-signin" id="formLogin" method="post" action="login">  <input type="hidden" name="csrfmiddlewaretoken" value="5Th6tFe2ftRSZBmYj4j95bN1Iq3xOmLF">
+                                        <h2 class="form-signin-heading">Inicio de sesiÃ³n</h2>
+                                        <input name="username" class="form-control" id="txtUsername" placeholder="Usuario" type="text">
+                                        <input name="password" class="form-control" id="txtPassword" placeholder="ContraseÃ±a" type="password">
+                                        <h5 class="form-signin-heading"><a href="http://ryca2.itfip.edu.co/reset/password_reset/">Recuperar ContraseÃ±a</a></h5>
+                                        <button type="submit" id="btnLogin" class="btn btn-primary">Ingresar</button>
+                                    </form>
+
+
+                                </div><!-- dropdown-menu -->
+                            </li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -21,6 +21,8 @@ Route::resource('centrocosto', 'CentroCostoController');
 Route::resource('sede', 'SedeController');
 Route::resource('oficina', 'OficinaController');
 Route::resource('ubicacion', 'UbicacionController');
+Route::resource('cargo', 'CargoController');
+Route::resource('perfil', 'PerfilController');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
