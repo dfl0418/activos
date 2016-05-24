@@ -10,7 +10,7 @@ class Oficina extends Model
 {
     //
     protected $guarded = ['id_oficina'];
-    protected $fillable = ['nombre_oficina','latitud', 'longitud'];
+    protected $fillable = ['nombre_oficina','latitud', 'longitud','sede_id','centro_costo_id'];
    
     public function sedes()
     {

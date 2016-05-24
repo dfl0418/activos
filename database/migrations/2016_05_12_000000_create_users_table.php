@@ -23,6 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('grupo_sanguineo',3);
+            $table->integer('cargo_id')->unsigned();
+            $table->foreign('cargo_id')->references('id_cargo')->on('cargos');
+            $table->integer('perfil_id')->unsigned();
+            $table->foreign('perfil_id')->references('id_perfil')->on('perfiles');
+            $table->integer('oficina_id')->unsigned();
+            $table->foreign('oficina_id')->references('id_oficina')->on('oficinas');
             $table->rememberToken();
             $table->timestamps();
         });

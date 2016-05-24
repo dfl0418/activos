@@ -52,7 +52,7 @@ class CategoriaController extends Controller {
         $categorias->nombre_categoria = \Request::input('nombre_categoria');
 
         $categorias->save();
-        return redirect('categoria/index')->with('message', 'categoria Creado');
+        return redirect('categoria')->with('message', 'categoria Creado');
     }
 
     /**

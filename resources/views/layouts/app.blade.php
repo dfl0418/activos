@@ -8,6 +8,14 @@
     <title>SCSAF</title>
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/bootstrap-theme.min') }}" rel="stylesheet">
+    <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/default.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="js/autocomplete.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    <script type="text/javascript" src="js/addanother.js"></script>
+    <script type="text/javascript" src="js/text_widget.js"></script>
+    <script type="text/javascript" src="js/remote.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/style.css">
     <!-- Fonts -->
 
 
@@ -132,6 +140,19 @@
     </nav>
 
     @yield('content')
+
+<!-- Footer del proyecto -->
+<div class="separator"></div>
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"> -->
+
+<footer class="footer">
+
+
+    <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a> &middot; <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">Licencia</a>  &middot; </p>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jstooltip.js"></script>
+</footer>
+
 
     <!-- JavaScripts -->
     <script src="js/jquery.min.js"></script>

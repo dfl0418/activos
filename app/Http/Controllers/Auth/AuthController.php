@@ -3,7 +3,12 @@
 namespace Almacen\Http\Controllers\Auth;
 
 use Almacen\User;
+use Almacen\Perfil;
+use Almacen\Cargo;
+use Almacen\Oficina;
 use Validator;
+
+use Illuminate\Http\Request;
 use Almacen\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -40,6 +45,22 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+
+    public function showRegistrationForm()
+    {
+        if (property_exists($this, 'registerView')) {
+            return view($this->registerView);
+        }
+        $oficinas = Oficina::lists('nombre_oficina', 'id_oficina');
+        $cargos = Cargo::lists('nombre_cargo', 'id_cargo');
+        $perfiles = Perfil::lists('nombre_perfil', 'id_perfil');
+
+
+
+
+        return view('auth.register')->with('oficinas',$oficinas)->with('cargos',$cargos)->with('perfiles',$perfiles);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -73,6 +94,11 @@ class AuthController extends Controller
             'phone' => $data['phone'],
             'address' => $data['address'],
             'grupo_sanguineo' => $data['grupo_sanguineo'],
+            'cargo_id' => $data['cargos'],
+            'perfil_id' => $data['perfiles'],
+            'oficina_id' => $data['oficinas'],
+
+
 
         ]);
     }

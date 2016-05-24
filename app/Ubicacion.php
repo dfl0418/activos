@@ -9,7 +9,7 @@ class Ubicacion extends Model
     //
     protected $table = 'ubicaciones';
     protected $guarded = ['id_ubicacion'];
-    protected $fillable = ['fecha_ingreso','fecha_salida'];
+    protected $fillable = ['fecha_ingreso','fecha_salida','activo_id','oficina_id'];
 
   
 
